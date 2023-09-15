@@ -5,8 +5,8 @@ use App\Http\Controllers\Auth\LoginController;
 
 use App\Http\Controllers\General;
 use App\Http\Controllers\Home;
-
-use App\Http\Controllers\Penilai;
+use App\Http\Controllers\LaporanPengaduanController;
+use App\Http\Controllers\masyarakat;
 
 use App\Http\Controllers\UserController;
 
@@ -38,7 +38,7 @@ Route::group(['middleware' => ['guest']], function () {
 });
 
 // GENERAL CONTROLLER ROUTE
-Route::group(['middleware' => ['auth', 'ceklevel:Administrator,user,penilai']], function () {
+Route::group(['middleware' => ['auth', 'ceklevel:Administrator,pimpinan,masyarakat']], function () {
 
     Route::get('/dashboard', [General::class, 'dashboard']);
     Route::get('/profile', [General::class, 'profile']);
@@ -46,11 +46,14 @@ Route::group(['middleware' => ['auth', 'ceklevel:Administrator,user,penilai']], 
 
     Route::post('/ubah_foto_profile', [General::class, 'ubahFotoProfile']);
     Route::post('/ubah_role', [General::class, 'ubahRole']);
+
+    Route::get('/laporan_pengaduan', [LaporanPengaduanController::class, 'laporanPengaduan']);
+    Route::get('/laporan_pengaduan/create', [LaporanPengaduanController::class, 'create']);
+    Route::post('/laporan_pengaduan/store', [LaporanPengaduanController::class, 'store']);
 });
 
 // ADMIN ROUTE
-Route::group(['middleware' => ['auth', 'ceklevel:user']], function () {
-
+Route::group(['middleware' => ['auth', 'ceklevel:pimpinan']], function () {
 });
 
 
@@ -65,6 +68,5 @@ Route::group(['middleware' => ['auth', 'ceklevel:Administrator']], function () {
         Route::post('/create_pengguna', [Admin::class, 'createPengguna']);
         Route::post('/update_pengguna', [Admin::class, 'updatePengguna']);
         Route::post('/delete_pengguna', [Admin::class, 'deletePengguna']);
-
     });
 });

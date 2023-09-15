@@ -29,10 +29,6 @@ class General extends Controller
         return view('pages.profile.index', $data);
     }
 
-    public function bantuan()
-    {
-        return view('pages.bantuan.index');
-    }
 
     public function ubahRole(Request $request)
     {
