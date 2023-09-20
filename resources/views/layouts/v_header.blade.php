@@ -58,5 +58,5 @@
 </div>
 <div class="loader">
     <!-- <img src="{{ asset('img/svg_animated/loading.svg') }}" alt="loading"> -->
-    <i style="font-size: 50px;" class="fas fa-spinner fa-spin"></i>
+    <i style="font-size: 50px;" class="fas fa-globe-asia fa-spin"></i>
 </div>

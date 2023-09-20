@@ -8,72 +8,66 @@
         </div>
         <ul class="sidebar-menu">
 
-            {{-- MENU PENGGUNA --}}
-            {{-- SEMUA PENGGUNA / USER MEMPUNYAI MENU INI --}}
-            <li class="menu-header">Pengguna</li>
-            <li class="" id="liDashboard"><a class="nav-link" href="{{ URL::to('/dashboard') }}"><i
-                        class="far fa-chart-bar"></i> <span>Dashboard</span></a></li>
-            <li class="" id="liProfile"><a class="nav-link" href="{{ URL::to('/profile') }}"><i
-                        class="far fa-user-circle "></i>
-                    <span>Profile</span></a></li>
-            <li class="" id="liLaporanPengaduan"><a class="nav-link" href="{{ URL::to('/laporan_pengaduan') }}"><i
-                        class="far fa-question-circle"></i> <span>Laporan Pengaduan</span></a></li>
-
-            <li class="" id="liLaporanPemetaan"><a class="nav-link" href="{{ URL::to('/laporan_pemetaan') }}"><i
-                        class="fas fa-map"></i> <span>Laporan Pemetaan</span></a></li>
-
-            <li class="" id="liLaporanPemetaan"><a class="nav-link" href="{{ URL::to('/laporan_pemetaan') }}"><i
-                        class="far fa-list-alt"></i> <span>Status laporan</span></a></li>
 
 
 
             @if (auth()->user()->role == 'Administrator')
-                {{-- MENU ADMIN --}}
-                <li class="menu-header">Admin</li>
-
-                {{-- <li class="" id="liRole"><a class="nav-link" href="{{ URL::to('/admin/role') }}"><i
-                            class="far fa-user"></i>
-                        <span>Role</span></a></li>
-
-                <li class="" id="liMenu"><a class="nav-link" href="{{ URL::to('/admin/menu') }}"><i
-                            class="far fa-list-alt"></i>
-                        <span>Menu</span></a></li> --}}
-
+                <li class="" id="liDashboard"><a class="nav-link" href="{{ URL::to('/dashboard') }}"><i
+                            class="far fa-chart-bar"></i> <span>Dashboard</span></a></li>
+                <li class="" id="liProfile"><a class="nav-link" href="{{ URL::to('/profile') }}"><i
+                            class="far fa-user-circle "></i>
+                        <span>Profile</span></a></li>
 
                 <li class="" id="liManajemenPengguna"><a class="nav-link"
                         href="{{ URL::to('/admin/pengguna') }}"><i class="far fa-user"></i> <span>Pengguna</span></a>
                 </li>
-                {{-- <li class="" id="liRoleMenu"><a class="nav-link" href="{{ URL::to('/admin/role_menu') }}"><i
-                            class="far fa-list-alt"></i>
-                        <span>Role Menu</span></a></li>
+                <li class="" id="liLaporanPengaduan"><a class="nav-link"
+                        href="{{ URL::to('/laporan_pengaduan') }}"><i class="far fa-question-circle"></i> <span>Laporan
+                            Pengaduan</span></a></li>
 
-                <li class="" id="liAplikasi"><a class="nav-link" href="{{ URL::to('/admin/aplikasi') }}"><i
-                            class="far fa-object-group"></i>
-                        <span>Aplikasi</span></a></li>
+                <li class="" id="liLaporanPemetaan"><a class="nav-link"
+                        href="{{ URL::to('/laporan_pemetaan') }}"><i class="fas fa-map"></i> <span>Laporan
+                            Pemetaan</span></a></li>
 
-                <li class="" id="lilogaktivitas"><a class="nav-link"
-                        href="{{ URL::to('/admin/log_aktivitas') }}"><i class="far fa-newspaper"></i>
-                        <span>Log Aktivitas</span></a></li> --}}
+                <li class="" id="liStatusLaporan"><a class="nav-link" href="{{ URL::to('/status_laporan') }}"><i
+                            class="far fa-list-alt"></i> <span>Status laporan</span></a></li>
+            @endif
 
-                <!-- <li class="" id="liAplikasiRole"><a class="nav-link" href="{{ URL::to('/admin/aplikasi_role') }}"><i class="far fa-list-alt"></i>
-                    <span>Role Aplikasi </span></a></li> -->
-
-                <!-- <li class="" id="liAplikasiMenu"><a class="nav-link" href="{{ URL::to('/admin/aplikasi_menu ') }}"><i
-                        class="far fa-list-alt"></i>
-                    <span>Menu Aplikasi </span></a></li> -->
-
-
-                {{-- <li class="" id="liCms"><a class="nav-link" href="{{ URL::to('/admin/cms') }}"><i
-                        class="far fa-window-restore"></i>
-                    <span>CMS </span></a></li> --}}
+            @if (auth()->user()->role == 'masyarakat')
+                <li class="" id="liDashboard"><a class="nav-link" href="{{ URL::to('/dashboard') }}"><i
+                            class="far fa-chart-bar"></i> <span>Dashboard</span></a></li>
+                <li class="" id="liProfile"><a class="nav-link" href="{{ URL::to('/profile') }}"><i
+                            class="far fa-user-circle "></i>
+                        <span>Profile</span></a></li>
 
 
-                {{-- END OF MENU ADMIN --}}
+                <li class="" id="liLaporanPengaduan"><a class="nav-link"
+                        href="{{ URL::to('/laporan_pengaduan') }}"><i class="far fa-question-circle"></i> <span>Laporan
+                            Pengaduan</span></a></li>
+
+                <li class="" id="liLaporanPemetaan"><a class="nav-link"
+                        href="{{ URL::to('/laporan_pemetaan') }}"><i class="fas fa-map"></i> <span>Laporan
+                            Pemetaan</span></a></li>
+
+                <li class="" id="liStatusLaporan"><a class="nav-link" href="{{ URL::to('/status_laporan') }}"><i
+                            class="far fa-list-alt"></i> <span>Status laporan</span></a></li>
             @endif
 
 
+            @if (auth()->user()->role == 'pimpinan')
+                <li class="" id="liDashboard"><a class="nav-link" href="{{ URL::to('/dashboard') }}"><i
+                            class="far fa-chart-bar"></i> <span>Dashboard</span></a></li>
+                <li class="" id="liProfile"><a class="nav-link" href="{{ URL::to('/profile') }}"><i
+                            class="far fa-user-circle "></i>
+                        <span>Profile</span></a></li>
 
-            <!-- DYNAMIC MENU HERE -->
+
+                <li class="" id="liLaporanPengaduan"><a class="nav-link"
+                        href="{{ URL::to('/laporan_pengaduan') }}"><i class="far fa-question-circle"></i> <span>Laporan
+                            Pengaduan</span></a></li>
+                <li class="" id="liStatusLaporan"><a class="nav-link" href="{{ URL::to('/status_laporan') }}"><i
+                            class="far fa-list-alt"></i> <span>Status laporan</span></a></li>
+            @endif
 
 
 

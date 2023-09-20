@@ -17,6 +17,10 @@ class CreateLaporanPengaduansTable extends Migration
             $table->id();
             $table->string('judul_pengaduan');
             $table->string('detail_pengaduan');
+            $table->string('status');
+            $table->string('gambar');
+            $table->string('long');
+            $table->string('lat');
             $table->timestamps();
         });
     }

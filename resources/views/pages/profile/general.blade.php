@@ -112,9 +112,7 @@
                                     data-toggle="modal" data-target="#modal">
                                     <i class="fas fa-camera"></i> Ganti Foto Profile
                                 </a>
-                                {{-- <a href="" class="btn bg-main text-white btn-lg btn-block btn-icon-split">
-                                    <i class="fas fa-pen"></i> Edit Biodata
-                                </a>  --}}
+
                             </div>
                         </li>
                     </ul>

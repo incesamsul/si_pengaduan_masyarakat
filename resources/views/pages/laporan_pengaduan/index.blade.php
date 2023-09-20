@@ -20,6 +20,8 @@
                                     <th>Judul pengaduah</th>
                                     <th>Detail pengaduah</th>
                                     <th>Lokasi</th>
+                                    <th>Gambar</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -31,6 +33,19 @@
                                         <td>{{ $row->detail_pengaduan }}</td>
                                         <td>
                                             <a href="" class="badge badge-primary">Lihat</a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btm-light" target="_blank"
+                                                href="{{ asset('data/gambar_pengaduan/' . $row->gambar) }}"><i
+                                                    class="fas fa-eye"></i></a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ URL::to('/laporan_pengaduan/edit/' . $row->id) }}"
+                                                class="badge badge-warning"><i class="fas fa-pen"></i>
+                                                edit</a>
+                                            <a href="{{ URl::to('/laporan_pengaduan/delete/' . $row->id) }}"
+                                                class="badge badge-danger ml-2"><i class="fas fa-trash"></i>
+                                                hapus</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -47,6 +62,6 @@
 @endsection
 @section('script')
     <script>
-        $('#liBantuan').addClass('active');
+        $('#liLaporanPengaduan').addClass('active');
     </script>
 @endsection

@@ -47,9 +47,17 @@ Route::group(['middleware' => ['auth', 'ceklevel:Administrator,pimpinan,masyarak
     Route::post('/ubah_foto_profile', [General::class, 'ubahFotoProfile']);
     Route::post('/ubah_role', [General::class, 'ubahRole']);
 
+    Route::get('/laporan_pemetaan', [LaporanPengaduanController::class, 'laporanPemetaan']);
+
+
     Route::get('/laporan_pengaduan', [LaporanPengaduanController::class, 'laporanPengaduan']);
     Route::get('/laporan_pengaduan/create', [LaporanPengaduanController::class, 'create']);
     Route::post('/laporan_pengaduan/store', [LaporanPengaduanController::class, 'store']);
+    Route::get('/laporan_pengaduan/edit/{id}', [LaporanPengaduanController::class, 'create']);
+    Route::put('/laporan_pengaduan/update', [LaporanPengaduanController::class, 'update']);
+    Route::get('/laporan_pengaduan/delete/{id}', [LaporanPengaduanController::class, 'delete']);
+    Route::get('/status_laporan', [LaporanPengaduanController::class, 'status']);
+    Route::get('/status_laporan/update/{status}/{id}', [LaporanPengaduanController::class, 'updateStatus']);
 });
 
 // ADMIN ROUTE
