@@ -33,7 +33,7 @@
                             class="far fa-list-alt"></i> <span>Status laporan</span></a></li>
             @endif
 
-            @if (auth()->user()->role == 'masyarakat')
+            @if (auth()->user()->role == 'rtrw')
                 <li class="" id="liDashboard"><a class="nav-link" href="{{ URL::to('/dashboard') }}"><i
                             class="far fa-chart-bar"></i> <span>Dashboard</span></a></li>
                 <li class="" id="liProfile"><a class="nav-link" href="{{ URL::to('/profile') }}"><i
@@ -54,7 +54,7 @@
             @endif
 
 
-            @if (auth()->user()->role == 'pimpinan')
+            @if (auth()->user()->role == 'camat')
                 <li class="" id="liDashboard"><a class="nav-link" href="{{ URL::to('/dashboard') }}"><i
                             class="far fa-chart-bar"></i> <span>Dashboard</span></a></li>
                 <li class="" id="liProfile"><a class="nav-link" href="{{ URL::to('/profile') }}"><i

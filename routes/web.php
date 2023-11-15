@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\General;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\LaporanPengaduanController;
-use App\Http\Controllers\masyarakat;
+use App\Http\Controllers\rtrw;
 
 use App\Http\Controllers\UserController;
 
@@ -38,7 +38,7 @@ Route::group(['middleware' => ['guest']], function () {
 });
 
 // GENERAL CONTROLLER ROUTE
-Route::group(['middleware' => ['auth', 'ceklevel:Administrator,pimpinan,masyarakat']], function () {
+Route::group(['middleware' => ['auth', 'ceklevel:Administrator,camat,rtrw']], function () {
 
     Route::get('/dashboard', [General::class, 'dashboard']);
     Route::get('/profile', [General::class, 'profile']);
@@ -61,7 +61,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:Administrator,pimpinan,masyarak
 });
 
 // ADMIN ROUTE
-Route::group(['middleware' => ['auth', 'ceklevel:pimpinan']], function () {
+Route::group(['middleware' => ['auth', 'ceklevel:camat']], function () {
 });
 
 

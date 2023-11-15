@@ -49,7 +49,7 @@
                                 @endif
                             </div>
                         </div>
-                        @if (auth()->user()->role == 'Administrator')
+                        @if (auth()->user()->role == 'camat' || auth()->user()->role == 'Administrator')
                             <div class="card-footer">
                                 <div class="button">
                                     <a href="{{ URL::to('/status_laporan/update/proses/' . $row->id) }}"

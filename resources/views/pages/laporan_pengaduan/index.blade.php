@@ -19,7 +19,7 @@
                                     <th>#</th>
                                     <th>Judul pengaduah</th>
                                     <th>Detail pengaduah</th>
-                                    <th>Lokasi</th>
+                                    <th>Status</th>
                                     <th>Gambar</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -32,7 +32,8 @@
                                         <td>{{ $row->judul_pengaduan }}</td>
                                         <td>{{ $row->detail_pengaduan }}</td>
                                         <td>
-                                            <a href="" class="badge badge-primary">Lihat</a>
+                                            <a href=""
+                                                class="badge badge-primary">{{ $row->status == '' ? 'Pending' : $row->status }}</a>
                                         </td>
                                         <td>
                                             <a class="btn btm-light" target="_blank"

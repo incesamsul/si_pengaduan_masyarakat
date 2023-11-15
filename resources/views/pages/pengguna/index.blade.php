@@ -73,8 +73,8 @@
                         <div class="form-group">
                             <label>Role</label>
                             <select class="form-control" name="tipe_pengguna" id="tipe-pengguna">
-                                <option>pimpinan</option>
-                                <option>masyarakat</option>
+                                <option>camat</option>
+                                <option value="rtrw">RT / RW</option>
                                 <option>Administrator</option>
                             </select>
                         </div>
