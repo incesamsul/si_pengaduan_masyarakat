@@ -554,7 +554,7 @@ ul.timeline>li:before {
 }
 
 ul.timeline>li.active:before {
-    background: white !important;
+    background: greenyellow !important;
 }
 
 
