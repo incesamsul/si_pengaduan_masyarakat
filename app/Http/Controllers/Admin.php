@@ -77,7 +77,7 @@ class Admin extends Controller
         User::create([
             'name' => $request->nama,
             'email' => $request->email,
-            'password' => bcrypt($request->email),
+            'password' => bcrypt('123456'),
             'role' => $request->tipe_pengguna,
         ]);
         return redirect('/admin/pengguna')->with('message', 'Pengguna Berhasil di tambahkan');
